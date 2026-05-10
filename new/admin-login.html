@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Admin login — Industrial, Commercial & Domestic Cleaning Solutions">
+    <meta name="theme-color" content="#071021">
+    <link rel="manifest" href="manifest.json">
+    <title>Admin login — Industrial, Commercial & Domestic Cleaning Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="auth-wrap">
+        <div class="auth-card">
+            <div class="auth-head">
+                <div>
+                    <h1 class="auth-title">Admin Login</h1>
+                    <p class="auth-subtitle">Manage customers, invoices, and service requests.</p>
+                </div>
+                <a class="btn dark" href="index.html" style="padding:10px 12px;">Home</a>
+            </div>
+
+            <form id="admin-login-form" class="form" method="post" action="#">
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="admin@cleaning.com">
+                </div>
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                <div id="admin-error" class="notice error" style="display:none;"></div>
+                <button type="submit" class="btn primary" style="width:100%;">Login</button>
+            </form>
+
+            <div class="auth-actions" style="margin-top: 10px;">
+                <p class="muted" style="margin:0;"><a class="link" href="admin-forgot-password.html">Forgot password?</a></p>
+            </div>
+
+            <div class="notice" style="margin-top:14px;">
+                Demo admin: <span style="font-weight:900;">admin@cleaning.com</span> / <span style="font-weight:900;">Admin123!</span>
+            </div>
+        </div>
+    </div>
+    <script src="auth.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Cleaning Services - Login Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #059669;
+            --accent: #3b82f6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --border: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-container {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .login-header h1 {
+            color: var(--text);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .login-header p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        .login-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        
+        .login-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .login-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent);
+        }
+        
+        .login-card.active {
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+        }
+        
+        .login-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        
+        .login-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .login-description {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            background: var(--bg);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        .demo-credentials {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 24px;
+        }
+        
+        .demo-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .demo-info {
+            font-family: monospace;
+            background: var(--bg);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 0.875rem;
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--danger);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            color: var(--danger);
+            font-size: 0.875rem;
+            display: none;
+        }
+        
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            color: var(--success);
+            font-size: 0.875rem;
+            display: none;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🧹 Professional Cleaning Services</h1>
+            <p>Industrial, Commercial & Domestic Cleaning Solutions</p>
+        </div>
+        
+        <div class="login-options">
+            <div class="login-card" onclick="selectLoginType('customer')">
+                <div class="login-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="login-title">Customer Portal</div>
+                <div class="login-description">Access your dashboard, manage service requests, and view invoices</div>
+            </div>
+            
+            <div class="login-card" onclick="selectLoginType('admin')">
+                <div class="login-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="login-title">Admin Portal</div>
+                <div class="login-description">Manage customers, create invoices, and monitor operations</div>
+            </div>
+        </div>
+        
+        <div class="demo-credentials">
+            <div class="demo-title">🔐 Demo Credentials</div>
+            <div class="demo-info">
+                <div><strong>Customer:</strong> john.doe@email.com / customer123</div>
+                <div><strong>Admin:</strong> admin@cleaning.com / Admin123!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Login Form -->
+    <div id="customerLogin" style="display: none;" class="fade-in">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>👤 Customer Login</h1>
+                <p>Access your cleaning service dashboard</p>
+            </div>
+            
+            <div id="customerError" class="error-message"></div>
+            <div id="customerSuccess" class="success-message"></div>
+            
+            <form id="customerLoginForm" onsubmit="customerLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" id="customerEmail" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" id="customerPassword" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="customerLoginBtn">
+                    <span id="customerLoginText">Login to Dashboard</span>
+                </button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 24px;">
+                <p style="color: #64748b; font-size: 0.875rem;">
+                    Don't have an account? 
+                    <a href="#" onclick="showRegisterForm()" style="color: var(--accent); text-decoration: none;">Register here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Form -->
+    <div id="adminLogin" style="display: none;" class="fade-in">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>🛡️ Admin Login</h1>
+                <p>Access management dashboard</p>
+            </div>
+            
+            <div id="adminError" class="error-message"></div>
+            <div id="adminSuccess" class="success-message"></div>
+            
+            <form id="adminLoginForm" onsubmit="adminLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" id="adminEmail" placeholder="admin@cleaning.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-input" id="adminPassword" placeholder="Enter admin password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" id="adminLoginBtn">
+                    <span id="adminLoginText">Login to Admin Dashboard</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let selectedLoginType = null;
+
+        function selectLoginType(type) {
+            selectedLoginType = type;
+            
+            // Hide both forms first
+            document.getElementById('customerLogin').style.display = 'none';
+            document.getElementById('adminLogin').style.display = 'none';
+            
+            // Clear any previous messages
+            hideMessages();
+            
+            // Show selected form with animation
+            setTimeout(() => {
+                document.getElementById(type + 'Login').style.display = 'block';
+            }, 100);
+        }
+
+        function showRegisterForm() {
+            showMessage('customer', 'Registration feature coming soon! Please use demo credentials to login.', 'info');
+        }
+
+        async function customerLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('customerEmail').value;
+            const password = document.getElementById('customerPassword').value;
+            
+            // Show loading state
+            setLoading('customer', true);
+            hideMessages();
+            
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('userRole', 'customer');
+                    
+                    // Create user object from response
+                    const user = {
+                        id: result.customerId,
+                        email: email,
+                        role: 'customer'
+                    };
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    
+                    showMessage('customer', 'Login successful! Redirecting...', 'success');
+                    
+                    setTimeout(() => {
+                        window.location.href = '/customer-dashboard.html';
+                    }, 1500);
+                } else {
+                    showMessage('customer', 'Login failed: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showMessage('customer', 'Login error: ' + error.message, 'error');
+            } finally {
+                setLoading('customer', false);
+            }
+        }
+
+        async function adminLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            // Show loading state
+            setLoading('admin', true);
+            hideMessages();
+            
+            try {
+                const response = await fetch('/api/auth/admin/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('userRole', 'admin');
+                    
+                    // Create user object from response
+                    const user = {
+                        id: result.id,
+                        email: email,
+                        role: 'admin',
+                        name: result.name
+                    };
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    
+                    showMessage('admin', 'Admin login successful! Redirecting...', 'success');
+                    
+                    setTimeout(() => {
+                        window.location.href = '/admin-dashboard.html';
+                    }, 1500);
+                } else {
+                    showMessage('admin', 'Admin login failed: ' + result.error, 'error');
+                }
+            } catch (error) {
+                showMessage('admin', 'Admin login error: ' + error.message, 'error');
+            } finally {
+                setLoading('admin', false);
+            }
+        }
+
+        function showMessage(type, message, messageType) {
+            const errorElement = document.getElementById(type + 'Error');
+            const successElement = document.getElementById(type + 'Success');
+            
+            // Hide both messages first
+            errorElement.style.display = 'none';
+            successElement.style.display = 'none';
+            
+            if (messageType === 'error') {
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            } else if (messageType === 'success') {
+                successElement.textContent = message;
+                successElement.style.display = 'block';
+            } else if (messageType === 'info') {
+                successElement.textContent = message;
+                successElement.style.display = 'block';
+            }
+        }
+
+        function hideMessages() {
+            document.getElementById('customerError').style.display = 'none';
+            document.getElementById('customerSuccess').style.display = 'none';
+            document.getElementById('adminError').style.display = 'none';
+            document.getElementById('adminSuccess').style.display = 'none';
+        }
+
+        function setLoading(type, isLoading) {
+            const button = document.getElementById(type + 'LoginBtn');
+            const text = document.getElementById(type + 'LoginText');
+            
+            if (isLoading) {
+                button.disabled = true;
+                text.innerHTML = '<span class="loading"></span> Logging in...';
+            } else {
+                button.disabled = false;
+                text.textContent = type === 'customer' ? 'Login to Dashboard' : 'Login to Admin Dashboard';
+            }
+        }
+
+        // Auto-select customer login for demo
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                selectLoginType('customer');
+            }, 500);
+        });
+
+        // Check for existing session
+        window.addEventListener('load', () => {
+            const token = localStorage.getItem('token');
+            const userRole = localStorage.getItem('userRole');
+            
+            if (token && userRole) {
+                if (userRole === 'customer') {
+                    window.location.href = '/customer-dashboard.html';
+                } else if (userRole === 'admin') {
+                    window.location.href = '/admin-dashboard.html';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial, Commercial & Domestic cleaning solutions | Professional Cleaning & Facility Services</title>
+    <meta name="description" content="Professional residential & commercial cleaning, pest control, and fumigation support. Fast scheduling, clear communication, and compliant crews. Call 224-440-0570 for a free estimate.">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="robots" content="index,follow">
+
+    <meta property="og:title" content="Industrial, Commercial & Domestic cleaning solutions">
+    <meta property="og:description" content="Residential & commercial cleaning, pest control, and fumigation support. Fast scheduling. Trusted crews.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./image%202.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="auth.js"></script>
+    <!-- Using local images in this project -->
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Industrial, Commercial & Domestic cleaning solutions",
+            "telephone": "+1-224-440-0570",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "VA",
+                "addressCountry": "US"
+            },
+            "areaServed": "Virginia",
+            "url": "",
+            "description": "Residential and commercial cleaning, pest control, and fumigation support for homes and facilities."
+        }
+    </script>
+
+    <style>
+         :root {
+            --primary: #0b1220;
+            --secondary: #059669;
+            --accent: #ffffff;
+            --bg: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 18px 45px rgba(2, 6, 23, .12);
+        }
+        
+        .ring-soft {
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, .12);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            animation: heroSlideshow 30s ease-in-out infinite;
+            opacity: 0.85;
+            z-index: 0;
+        }
+        
+        @keyframes heroSlideshow {
+            0%,
+            14% {
+                background-image: url("./image 1.jpg");
+            }
+            15%,
+            29% {
+                background-image: url("./image 2.jpg");
+            }
+            30%,
+            44% {
+                background-image: url("./image 3.jpg");
+            }
+            45%,
+            59% {
+                background-image: url("./image 4.jpg");
+            }
+            60%,
+            74% {
+                background-image: url("./image 5.jpg");
+            }
+            75%,
+            89% {
+                background-image: url("./image 6.jpg");
+            }
+            90%,
+            100% {
+                background-image: url("./image 1.jpg");
+            }
+        }
+        
+        img {
+            transition: transform 0.25s ease-in-out;
+            display: inline-block;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-950 font-sans">
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a class="group flex items-center gap-3" href="./index.html" aria-label="Industrial, Commercial & Domestic cleaning solutions Home">
+                    <img src="./logo.jpeg" alt="Industrial, Commercial & Domestic cleaning solutions logo" class="w-11 h-11 rounded-xl object-cover ring-1 ring-gray-200 bg-white transform transition duration-200 hover:scale-110 active:scale-125">
+                    <div class="leading-tight transform transition duration-200 group-hover:scale-105">
+                        <p class="text-[11px] tracking-wide uppercase text-slate-500">Industrial, Commercial & Domestic</p>
+                        <h1 class="text-lg md:text-xl font-extrabold text-slate-950">Cleaning Solutions</h1>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="./services.html" class="text-slate-700 hover:text-green-700 font-medium">Services</a>
+                    <a href="./how-it-works.html" class="text-slate-700 hover:text-green-700 font-medium">How it works</a>
+                    <a href="./contact.html" class="text-slate-700 hover:text-green-700 font-medium">Free estimate</a>
+                    <a href="./faq.html" class="text-slate-700 hover:text-green-700 font-medium">FAQ</a>
+                    <a href="./contact.html" class="text-slate-700 hover:text-green-700 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <button onclick="openLoginModal()" class="hidden sm:inline-flex bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                        <i class="fa-solid fa-sign-in-alt mr-2"></i>Login
+                    </button>
+                    <a href="./contact.html" class="hidden sm:inline-flex bg-white border border-slate-200 hover:border-green-300 hover:text-green-700 px-4 py-2 rounded-lg font-semibold text-sm">
+                        Free estimate
+                    </a>
+                    <a href="tel:+12244400570" class="bg-blue-950 hover:bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                        <i class="fa-solid fa-phone mr-2"></i>224-440-0570
+                    </a>
+                    <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200" aria-label="Open menu" onclick="toggleMenu()">
+                        <i class="fa-solid fa-bars text-slate-900"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="grid gap-2 pt-2">
+                    <button onclick="openLoginModal(); toggleMenu(false)" class="px-3 py-2 rounded-lg hover:bg-white text-left bg-green-700 text-white">
+                        <i class="fa-solid fa-sign-in-alt mr-2"></i>Login
+                    </button>
+                    <a href="./services.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Services</a>
+                    <a href="./how-it-works.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">How it works</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Free estimate</a>
+                    <a href="./faq.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">FAQ</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden text-white">
+        <div class="hero-slideshow"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-green-500/70 via-green-400/35 to-blue-900/95"></div>
+        <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 48px 48px;">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 glass border border-green-700/25 rounded-full px-4 py-2 text-sm text-green-100">
+                        <i class="fa-solid fa-circle-check text-green-400"></i>
+                        <span>Fast scheduling • Professional crews • Clear communication</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight mt-5 mb-4 text-white">
+                        A cleaner, safer space—without the hassle.
+                    </h2>
+                    <p class="text-lg md:text-xl text-green-100 mb-8">
+                        Residential & commercial cleaning, pest control, and fumigation support for homes, offices, warehouses, restaurants, and healthcare spaces.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="./contact.html" class="bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-lg font-bold text-lg text-center">
+                            Contact for free estimate
+                        </a>
+                        <a href="tel:+12244400570" class="bg-blue-950 hover:bg-slate-900 text-white border border-blue-700 px-8 py-4 rounded-lg font-bold text-lg text-center">
+                            Call now
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-6 mt-8 text-sm text-green-100">
+                        <span class="inline-flex items-center"><i
+                                class="fa-solid fa-certificate mr-2 text-green-400"></i>Insured crews</span>
+                        <span class="inline-flex items-center"><i
+                                class="fa-solid fa-clipboard-check mr-2 text-green-400"></i>Checklists & QA</span>
+                        <span class="inline-flex items-center"><i class="fa-solid fa-clock mr-2 text-green-400"></i>Same-week
+                            availability</span>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-3 text-xs text-green-100">
+                        <span class="glass border border-green-700/25 rounded-lg px-3 py-2 bg-green-50/40">Background-checked staff*</span>
+                        <span class="glass border border-green-700/25 rounded-lg px-3 py-2 bg-green-50/40">Eco-conscious options</span>
+                        <span class="glass border border-green-700/25 rounded-lg px-3 py-2 bg-green-50/40">COI available on request</span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-3 rounded-2xl bg-white/10 blur-2xl"></div>
+                    <div class="relative bg-white/5 border border-white/10 rounded-2xl p-3 shadow-soft">
+                        <img src="./image%202.jpg" alt="Our team delivering professional cleaning services" class="rounded-xl w-full h-[360px] md:h-[430px] object-cover">
+                        <div class="grid grid-cols-3 gap-3 mt-3">
+                            <div class="glass border border-white/10 rounded-xl p-3">
+                                <p class="text-xs text-white/75">Availability</p>
+                                <p class="text-lg font-bold">Same week</p>
+                            </div>
+                            <div class="glass border border-white/10 rounded-xl p-3">
+                                <p class="text-xs text-white/75">Coverage</p>
+                                <p class="text-lg font-bold">Homes + Facilities</p>
+                            </div>
+                            <div class="glass border border-white/10 rounded-xl p-3">
+                                <p class="text-xs text-white/75">Support</p>
+                                <p class="text-lg font-bold">Phone + Email</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick links -->
+    <section class="py-14 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-4">
+                <a href="./services.html" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft hover:border-green-200 transition">
+                    <p class="text-sm text-slate-500">Explore</p>
+                    <p class="text-xl font-bold mt-1">Services</p>
+                    <p class="text-slate-700 mt-2">Cleaning, pest control, fumigation support, and allergen control.</p>
+                </a>
+                <a href="./how-it-works.html" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft hover:border-green-200 transition">
+                    <p class="text-sm text-slate-500">See</p>
+                    <p class="text-xl font-bold mt-1">How it works</p>
+                    <p class="text-slate-700 mt-2">A simple process for scheduling, scope, and walkthroughs.</p>
+                </a>
+                <a href="./contact.html" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft hover:border-green-200 transition">
+                    <p class="text-sm text-slate-500">Free</p>
+                    <p class="text-xl font-bold mt-1">Estimate</p>
+                    <p class="text-slate-700 mt-2">Contact us for a free estimate and scheduling.</p>
+                </a>
+                <a href="./contact.html" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft hover:border-green-200 transition">
+                    <p class="text-sm text-slate-500">Contact</p>
+                    <p class="text-xl font-bold mt-1">Request service</p>
+                    <p class="text-slate-700 mt-2">Call or message us to schedule and confirm scope.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-20 bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-sm text-slate-500">About the company</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-950 mt-2">Known for consistent, high-quality work</h2>
+                    <p class="text-lg text-slate-700 mt-4">
+                        Industrial, Commercial & Domestic cleaning solutions is a Virginia-based service provider trusted by homeowners, businesses, and property managers. We’ve built our reputation over time by showing up on schedule, communicating clearly, and delivering results you can
+                        see.
+                    </p>
+                    <p class="text-lg text-slate-700 mt-4">
+                        Many of our customers come from referrals—because we’re highly recommended for thorough work, professional crews, and a smooth experience from estimate to final walkthrough.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 mt-8">
+                        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+                            <p class="text-sm text-slate-500">What you can expect</p>
+                            <p class="font-semibold mt-2">Clear scope + checklists</p>
+                            <p class="text-slate-700 mt-1">So you know exactly what’s included before we begin.</p>
+                        </div>
+                        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+                            <p class="text-sm text-slate-500">Work standard</p>
+                            <p class="font-semibold mt-2">Detail-focused cleaning</p>
+                            <p class="text-slate-700 mt-1">With spot checks and a final walkthrough when requested.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-soft">
+                    <div class="grid grid-cols-2 gap-3">
+                        <img src="./image%201.jpg" alt="Team member cleaning on site" class="zoomable rounded-xl w-full h-48 object-cover cursor-zoom-in">
+                        <img src="./image%203.jpg" alt="Team member working during cleaning service" class="zoomable rounded-xl w-full h-48 object-cover cursor-zoom-in">
+                        <img src="./image%204.jpg" alt="Team member doing professional cleaning work" class="zoomable rounded-xl w-full h-48 object-cover cursor-zoom-in">
+                        <img src="./image%205.jpg" alt="Team member handling cleaning tasks" class="zoomable rounded-xl w-full h-48 object-cover cursor-zoom-in">
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4">Real on-the-job photos from our project folder.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between gap-6 mb-10">
+                <div>
+                    <p class="text-sm text-slate-500">Our team</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-950 mt-2">Team members at work</h2>
+                    <p class="text-lg text-slate-700 mt-3">A quick look at our crew delivering service in the field.</p>
+                </div>
+                <a href="./contact.html" class="hidden sm:inline-flex bg-green-700 hover:bg-green-800 text-white px-5 py-3 rounded-lg font-semibold">
+                    Request service
+                </a>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <figure class="bg-white border border-slate-200 rounded-2xl p-3 shadow-soft">
+                    <img src="./image%201.jpg" alt="Cleaning team member on site" class="zoomable rounded-xl w-full h-56 object-cover cursor-zoom-in">
+                    <figcaption class="text-sm text-slate-700 mt-3 px-1">On-site service</figcaption>
+                </figure>
+                <figure class="bg-white border border-slate-200 rounded-2xl p-3 shadow-soft">
+                    <img src="./image%202.jpg" alt="Cleaning crew working on a job" class="zoomable rounded-xl w-full h-56 object-cover cursor-zoom-in">
+                    <figcaption class="text-sm text-slate-700 mt-3 px-1">Professional crew</figcaption>
+                </figure>
+                <figure class="bg-white border border-slate-200 rounded-2xl p-3 shadow-soft">
+                    <img src="./image%203.jpg" alt="Team member performing cleaning work" class="zoomable rounded-xl w-full h-56 object-cover cursor-zoom-in">
+                    <figcaption class="text-sm text-slate-700 mt-3 px-1">Detail-focused work</figcaption>
+                </figure>
+                <figure class="bg-white border border-slate-200 rounded-2xl p-3 shadow-soft">
+                    <img src="./image%204.jpg" alt="Team member cleaning a space" class="zoomable rounded-xl w-full h-56 object-cover cursor-zoom-in">
+                    <figcaption class="text-sm text-slate-700 mt-3 px-1">Residential & commercial</figcaption>
+                </figure>
+                <figure class="bg-white border border-slate-200 rounded-2xl p-3 shadow-soft">
+                    <img src="./image%205.jpg" alt="Team member working during service" class="zoomable rounded-xl w-full h-56 object-cover cursor-zoom-in">
+                    <figcaption class="text-sm text-slate-700 mt-3 px-1">Reliable execution</figcaption>
+                </figure>
+                <figure class="bg-white border border-slate-200 rounded-2xl p-3 shadow-soft">
+                    <img src="./image%206.jpg" alt="Team member completing cleaning tasks" class="zoomable rounded-xl w-full h-56 object-cover cursor-zoom-in">
+                    <figcaption class="text-sm text-slate-700 mt-3 px-1">Consistent results</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-slate-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 Industrial, Commercial & Domestic cleaning solutions. All rights reserved.</p>
+            <p class="mt-2">Estimates are informational. Final pricing depends on scope, site conditions, and local requirements.
+            </p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="./contact.html" class="hover:text-white">Request documentation</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image zoom modal -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[60] bg-black/80 p-4">
+        <div class="w-full h-full flex items-center justify-center">
+            <button type="button" aria-label="Close image" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-white" onclick="closeLightbox()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="lightboxImg" src="" alt="" class="max-h-[90vh] max-w-[92vw] rounded-xl shadow-soft">
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="hidden fixed inset-0 z-[60] bg-black/50 p-4 flex items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-soft max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-slate-950">Login Portal</h3>
+                    <button type="button" onclick="closeLoginModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
+                        <i class="fa-solid fa-xmark text-slate-600"></i>
+                    </button>
+                </div>
+
+                <!-- Role Selection -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Login as</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="selectRole('customer')" id="customerRole" class="role-btn p-3 border-2 border-green-500 bg-green-50 rounded-lg text-center transition">
+                            <i class="fa-solid fa-user text-green-600 text-xl mb-1"></i>
+                            <p class="text-sm font-medium text-slate-700">Customer</p>
+                        </button>
+                        <button onclick="selectRole('admin')" id="adminRole" class="role-btn p-3 border-2 border-slate-200 bg-white rounded-lg text-center transition hover:border-green-300">
+                            <i class="fa-solid fa-user-shield text-slate-600 text-xl mb-1"></i>
+                            <p class="text-sm font-medium text-slate-700">Admin</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="Enter your email">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-medium text-slate-700 mb-2">Password</label>
+                        <input type="password" id="password" name="password" required 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="Enter your password">
+                    </div>
+
+                    <div id="loginError" class="hidden mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm"></div>
+                    <div id="loginSuccess" class="hidden mb-4 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm"></div>
+
+                    <button type="submit" id="loginBtn" 
+                            class="w-full bg-green-700 hover:bg-green-800 text-white font-semibold py-3 rounded-lg transition">
+                        <i class="fa-solid fa-sign-in-alt mr-2"></i>Login as Customer
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-slate-600">
+                        Don't have an account? 
+                        <button onclick="showRegisterForm()" class="text-green-700 hover:text-green-800 font-medium">Register here</button>
+                    </p>
+                </div>
+
+                <!-- Register Form (Hidden by default) -->
+                <form id="registerForm" onsubmit="handleRegister(event)" class="hidden">
+                    <div class="mb-4">
+                        <label for="regEmail" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                        <input type="email" id="regEmail" name="regEmail" required 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="Enter your email">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="regPassword" class="block text-sm font-medium text-slate-700 mb-2">Password</label>
+                        <input type="password" id="regPassword" name="regPassword" required 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="Create a password">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="firstName" class="block text-sm font-medium text-slate-700 mb-2">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="First name">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="lastName" class="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="Last name">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium text-slate-700 mb-2">Phone (Optional)</label>
+                        <input type="tel" id="phone" name="phone" 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="Phone number">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="company" class="block text-sm font-medium text-slate-700 mb-2">Company (Optional)</label>
+                        <input type="text" id="company" name="company" 
+                               class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition"
+                               placeholder="Company name">
+                    </div>
+
+                    <div id="registerError" class="hidden mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm"></div>
+                    <div id="registerSuccess" class="hidden mb-4 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm"></div>
+
+                    <button type="submit" 
+                            class="w-full bg-green-700 hover:bg-green-800 text-white font-semibold py-3 rounded-lg transition">
+                        <i class="fa-solid fa-user-plus mr-2"></i>Register Account
+                    </button>
+                </form>
+
+                <div class="mt-4 text-center">
+                    <button onclick="showLoginForm()" class="text-sm text-green-700 hover:text-green-800 font-medium">
+                        Already have an account? Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentRole = 'customer';
+
+        function toggleMenu(force) {
+            const el = document.getElementById('mobileMenu');
+            const shouldShow = typeof force === 'boolean' ? force : el.classList.contains('hidden');
+            if (shouldShow) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+
+        function openLightbox(imgEl) {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightboxImg');
+            lbImg.src = imgEl.currentSrc || imgEl.src;
+            lbImg.alt = imgEl.alt || 'Team photo';
+            lb.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lightboxImg');
+            lb.classList.add('hidden');
+            lbImg.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Login Modal Functions
+        function openLoginModal() {
+            const modal = document.getElementById('loginModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            resetForms();
+        }
+
+        function closeLoginModal() {
+            const modal = document.getElementById('loginModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            resetForms();
+        }
+
+        function resetForms() {
+            document.getElementById('loginForm').reset();
+            document.getElementById('registerForm').reset();
+            document.getElementById('loginError').classList.add('hidden');
+            document.getElementById('loginSuccess').classList.add('hidden');
+            document.getElementById('registerError').classList.add('hidden');
+            document.getElementById('registerSuccess').classList.add('hidden');
+            selectRole('customer');
+        }
+
+        function selectRole(role) {
+            currentRole = role;
+            const customerBtn = document.getElementById('customerRole');
+            const adminBtn = document.getElementById('adminRole');
+            const loginBtn = document.getElementById('loginBtn');
+
+            if (role === 'customer') {
+                customerBtn.classList.add('border-green-500', 'bg-green-50');
+                customerBtn.classList.remove('border-slate-200', 'bg-white');
+                adminBtn.classList.remove('border-green-500', 'bg-green-50');
+                adminBtn.classList.add('border-slate-200', 'bg-white');
+                loginBtn.innerHTML = '<i class="fa-solid fa-sign-in-alt mr-2"></i>Login as Customer';
+            } else {
+                adminBtn.classList.add('border-green-500', 'bg-green-50');
+                adminBtn.classList.remove('border-slate-200', 'bg-white');
+                customerBtn.classList.remove('border-green-500', 'bg-green-50');
+                customerBtn.classList.add('border-slate-200', 'bg-white');
+                loginBtn.innerHTML = '<i class="fa-solid fa-sign-in-alt mr-2"></i>Login as Admin';
+            }
+        }
+
+        function showRegisterForm() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.remove('hidden');
+            document.getElementById('loginError').classList.add('hidden');
+            document.getElementById('loginSuccess').classList.add('hidden');
+        }
+
+        function showLoginForm() {
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('registerError').classList.add('hidden');
+            document.getElementById('registerSuccess').classList.add('hidden');
+        }
+
+        async function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('loginError');
+            const successDiv = document.getElementById('loginSuccess');
+
+            errorDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+
+            try {
+                // Use the local authentication system
+                const result = await handleIndexLogin(email, password, currentRole);
+
+                if (result.success) {
+                    successDiv.textContent = 'Login successful! Redirecting to dashboard...';
+                    successDiv.classList.remove('hidden');
+
+                    setTimeout(() => {
+                        if (currentRole === 'admin') {
+                            window.location.href = 'admin-dashboard.html';
+                        } else {
+                            window.location.href = 'customer-dashboard.html';
+                        }
+                    }, 1500);
+                } else {
+                    errorDiv.textContent = result.error || 'Login failed. Please try again.';
+                    errorDiv.classList.remove('hidden');
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Login error. Please try again.';
+                errorDiv.classList.remove('hidden');
+            }
+        }
+
+        async function handleRegister(event) {
+            event.preventDefault();
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const phone = document.getElementById('phone').value;
+            const company = document.getElementById('company').value;
+            const errorDiv = document.getElementById('registerError');
+            const successDiv = document.getElementById('registerSuccess');
+
+            errorDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+
+            try {
+                // Use the local authentication system
+                const result = await handleIndexRegister(email, password, firstName, lastName, phone, company);
+
+                if (result.success) {
+                    successDiv.textContent = 'Registration successful! Redirecting to your dashboard...';
+                    successDiv.classList.remove('hidden');
+
+                    setTimeout(() => {
+                        window.location.href = 'customer-dashboard.html';
+                    }, 2000);
+                } else {
+                    errorDiv.textContent = result.error || 'Registration failed. Please try again.';
+                    errorDiv.classList.remove('hidden');
+                }
+            } catch (error) {
+                errorDiv.textContent = 'Registration error. Please try again.';
+                errorDiv.classList.remove('hidden');
+            }
+        }
+
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            if (target && target.classList && target.classList.contains('zoomable')) {
+                openLightbox(target);
+            }
+            if (target && target.id === 'lightbox') {
+                closeLightbox();
+            }
+            if (target && target.id === 'loginModal') {
+                closeLoginModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeLoginModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

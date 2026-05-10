@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Authentication Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Admin Login</h2>
+        <button onclick="testAdminLogin()">Login as Admin</button>
+        <button onclick="testCustomerLogin()">Login as Customer</button>
+        <button onclick="clearAuth()">Clear Auth</button>
+        <div id="test-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Direct Dashboard Links</h2>
+        <a href="admin-dashboard.html">Admin Dashboard</a> | 
+        <a href="customer-dashboard.html">Customer Dashboard</a> | 
+        <a href="index.html">Main Page</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>Current Auth State</h2>
+        <div id="auth-state">Checking...</div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        function updateAuthState() {
+            const current = getCurrentUser();
+            const stateDiv = document.getElementById('auth-state');
+            if (current) {
+                stateDiv.innerHTML = `
+                    <div class="success">Authenticated as: ${current.type}</div>
+                    <div>Email: ${current.email}</div>
+                    <div>Name: ${current.first_name || 'N/A'} ${current.last_name || ''}</div>
+                `;
+            } else {
+                stateDiv.innerHTML = '<div class="error">Not authenticated</div>';
+            }
+        }
+
+        async function testAdminLogin() {
+            const result = await handleIndexLogin('admin@cleaning.com', 'Admin123!', 'admin');
+            const resultDiv = document.getElementById('test-result');
+            if (result.success) {
+                resultDiv.innerHTML = '<div class="success">Admin login successful! Redirecting...</div>';
+                setTimeout(() => {
+                    window.location.href = 'admin-dashboard.html';
+                }, 1000);
+            } else {
+                resultDiv.innerHTML = `<div class="error">Admin login failed: ${result.error}</div>`;
+            }
+            updateAuthState();
+        }
+
+        async function testCustomerLogin() {
+            // First create a test customer if none exists
+            const users = getUsers();
+            const testCustomer = users.find(u => u.email === 'test@customer.com');
+            if (!testCustomer) {
+                const newCustomer = {
+                    email: 'test@customer.com',
+                    password: 'password123',
+                    first_name: 'Test',
+                    last_name: 'Customer',
+                    company_name: 'Test Company',
+                    phone: '123-456-7890',
+                    invoices: [
+                        { number: 'INV-001', date: '2024-01-15', amount: '250.00', status: 'Paid', description: 'Office Cleaning' }
+                    ],
+                    service_requests: []
+                };
+                users.push(newCustomer);
+                setUsers(users);
+            }
+
+            const result = await handleIndexLogin('test@customer.com', 'password123', 'customer');
+            const resultDiv = document.getElementById('test-result');
+            if (result.success) {
+                resultDiv.innerHTML = '<div class="success">Customer login successful! Redirecting...</div>';
+                setTimeout(() => {
+                    window.location.href = 'customer-dashboard.html';
+                }, 1000);
+            } else {
+                resultDiv.innerHTML = `<div class="error">Customer login failed: ${result.error}</div>`;
+            }
+            updateAuthState();
+        }
+
+        function clearAuth() {
+            clearCurrentUser();
+            updateAuthState();
+            document.getElementById('test-result').innerHTML = '<div class="success">Auth cleared</div>';
+        }
+
+        // Update auth state on load
+        window.addEventListener('DOMContentLoaded', updateAuthState);
+    </script>
+</body>
+</html>

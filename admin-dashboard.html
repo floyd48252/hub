@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Admin dashboard — Industrial, Commercial & Domestic Cleaning Solutions">
+    <meta name="theme-color" content="#071021">
+    <link rel="manifest" href="manifest.json">
+    <title>Admin Dashboard — Cleaning Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="admin-dashboard">
+    <div class="page">
+        <!-- Header -->
+        <div class="dash-header">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <img src="logo.jpeg" alt="Logo" style="height: 50px; width: auto; border-radius: 8px;">
+                <div>
+                    <h1 class="dash-title">Admin Dashboard</h1>
+                    <p class="dash-sub">Industrial, Commercial & Domestic Cleaning Solutions</p>
+                </div>
+            </div>
+            <div class="dash-actions">
+                <a href="index.html" class="btn dark">Home</a>
+                <a href="register.html" class="btn dark">Create Customer</a>
+                <a href="customer-dashboard.html" class="btn dark">Customer Portal</a>
+                <button id="logout-button" class="btn primary" type="button">Logout</button>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Customers</div>
+                <div class="stat-value" id="admin-total-customers">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Invoices</div>
+                <div class="stat-value" id="admin-total-invoices">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Amount Paid</div>
+                <div class="stat-value" id="admin-amount-paid">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Amount Pending</div>
+                <div class="stat-value" id="admin-amount-pending">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Pending Requests</div>
+                <div class="stat-value" id="admin-pending-requests">--</div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card block">
+            <h2>⚡ Quick Actions</h2>
+            <div class="quick-actions" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+                <button class="btn dark" onclick="refreshDashboard()">🔄 Refresh Dashboard</button>
+                <button class="btn" onclick="exportCustomers()">📥 Export Customers</button>
+                <button class="btn" onclick="showAddCustomerModal()">➕ Add Customer</button>
+                <button class="btn" onclick="generateReport()">📊 Generate Report</button>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid">
+            <!-- Customer Management -->
+            <div class="card block">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h2>👥 Customer Management</h2>
+                    <div class="table-actions">
+                        <button class="btn dark" onclick="refreshCustomers()">🔄 Refresh</button>
+                        <button class="btn" onclick="exportCustomers()">📥 Export</button>
+                    </div>
+                </div>
+                <div class="table-wrap" role="region" aria-label="Customers table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Invoices</th>
+                                <th>Requests</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-customer-body">
+                            <tr>
+                                <td colspan="7" style="text-align:center; padding:18px; color:#6b7280;">Loading customers...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Invoice Creation -->
+            <div class="card block">
+                <h2>📄 Create Invoice</h2>
+                <form id="invoice-form" class="form">
+                    <div class="form-group">
+                        <label for="customer_id">Customer Email/Company *</label>
+                        <input type="text" id="customer_id" name="customer_id" placeholder="Enter customer email or company name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="invoice_number">Invoice Number *</label>
+                        <input type="text" id="invoice_number" name="invoice_number" placeholder="INV-0001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" name="description" rows="3" placeholder="Describe the services provided..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount ($) *</label>
+                        <input type="number" id="amount" name="amount" step="0.01" min="0" placeholder="0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="due_date">Due Date *</label>
+                        <input type="date" id="due_date" name="due_date" required>
+                    </div>
+                    <div id="invoice-submit-notice" class="notice" style="display: none;"></div>
+                    <button type="submit" class="btn primary">Create Invoice</button>
+                </form>
+                <p class="hint">This form creates an invoice for a registered customer.</p>
+            </div>
+
+            <!-- Service Requests Management -->
+            <div class="card block">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h2>🛠️ Service Requests</h2>
+                    <div class="table-actions">
+                        <button class="btn dark" onclick="refreshRequests()">🔄 Refresh</button>
+                        <button class="btn" onclick="exportRequests()">📥 Export</button>
+                    </div>
+                </div>
+                <div class="table-wrap" role="region" aria-label="Service requests table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Service Type</th>
+                                <th>Description</th>
+                                <th>Requested Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-requests-body">
+                            <tr>
+                                <td colspan="6" style="text-align:center; padding:18px; color:#6b7280;">Loading service requests...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <dialog id="customer-dialog" style="border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(10,14,30,.96); color: rgba(255,255,255,.92); width: min(820px, calc(100vw - 24px)); box-shadow: 0 24px 70px rgba(0,0,0,.45);">
+            <div style="display:flex; justify-content: space-between; gap: 14px; align-items:flex-start; padding: 14px 14px 10px;">
+                <div>
+                    <div style="font-weight: 900; letter-spacing: -.2px; font-size: 16px;">Customer account</div>
+                    <div id="customer-dialog-sub" class="muted" style="margin-top: 4px;">—</div>
+                </div>
+                <button id="customer-dialog-close" class="btn dark" type="button" style="padding: 10px 12px;">Close</button>
+            </div>
+            <div style="padding: 0 14px 14px;">
+                <div id="customer-dialog-body" class="notice" style="background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.10);"></div>
+                <div class="muted" style="margin-top: 10px;">Security note: this is a demo. Don’t store real passwords in localStorage in production.</div>
+            </div>
+        </dialog>
+    </div>
+    <script src="auth.js"></script>
+    <script>
+        // Check authentication on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Wait a moment for auth.js to fully load
+            setTimeout(() => {
+                try {
+                    const current = getCurrentUser();
+                    if (!current || current.type !== 'admin') {
+                        // If no valid admin session, redirect to main page login
+                        console.log('No valid admin session, redirecting to login...');
+                        window.location.href = 'index.html';
+                    } else {
+                        // Initialize dashboard if authenticated
+                        console.log('Admin authenticated, loading dashboard...');
+                        ensureAdminSession();
+                        
+                        // Ensure dashboard is visible
+                        document.body.style.display = 'block';
+                        document.querySelector('.page').style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Authentication error:', error);
+                    window.location.href = 'index.html';
+                }
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

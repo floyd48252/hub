@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Industrial, Commercial & Domestic Cleaning Solutions — professional industrial, commercial, and domestic cleaning portal.">
+    <meta name="theme-color" content="#071021">
+    <link rel="manifest" href="manifest.json">
+    <title>Industrial, Commercial & Domestic Cleaning Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="home">
+    <div class="shell">
+        <div class="topbar">
+            <div class="topbar-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand-logo" src="logo.jpeg" alt="Industrial, Commercial & Domestic Cleaning Solutions logo">
+                    <div class="brand-title">
+                        <strong class="brand-name">Industrial, Commercial &amp; Domestic Cleaning Solutions</strong>
+                        <span>Customer &amp; Admin Portal</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Primary">
+                    <a class="chip ghost" href="register.html">Register</a>
+                    <a class="chip" href="login.html">Customer Login</a>
+                    <a class="chip" href="admin-login.html">Admin Login</a>
+                    <a class="chip primary" href="customer-dashboard.html">Dashboard</a>
+                </nav>
+            </div>
+        </div>
+
+        <main class="main">
+            <section class="hero">
+                <div class="panel hero-main">
+                    <div class="kicker"><b>Industrial, commercial & domestic</b> cleaning</div>
+                    <h1>Manage service requests and invoices with a clear, professional workflow.</h1>
+                    <p class="lead">Customer accounts, requests, and invoices are stored locally in your browser for this demo. Use it as a starting point for a production system with a real backend.</p>
+                    <div class="cta-row">
+                        <a class="btn primary" href="register.html">Create customer account</a>
+                        <a class="btn dark" href="login.html">Customer login</a>
+                        <a class="btn secondary" href="admin-login.html">Admin access</a>
+                    </div>
+                </div>
+                <aside class="panel hero-aside">
+                    <p class="aside-title">Demo admin credentials</p>
+                    <p class="aside-note">Use this account to create invoices and review requests.</p>
+                    <div class="demo" role="note" aria-label="Demo admin credentials">
+                        <div class="row"><span class="label">Email</span><code>admin@cleaning.com</code></div>
+                        <div class="row"><span class="label">Password</span><code>Admin123!</code></div>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="section">
+                <h2>Quick start</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Customer onboarding</h3>
+                        <p>Create an account to submit service requests and view invoices.</p>
+                        <a class="btn primary" href="register.html">Create account</a>
+                    </div>
+                    <div class="card">
+                        <h3>Customer access</h3>
+                        <p>Sign in to track request status and invoice history.</p>
+                        <a class="btn" href="login.html">Customer login</a>
+                    </div>
+                    <div class="card">
+                        <h3>Admin operations</h3>
+                        <p>Review service requests, create invoices, and monitor totals.</p>
+                        <a class="btn secondary" href="admin-login.html">Admin login</a>
+                    </div>
+                    <div class="card">
+                        <h3>Dashboards</h3>
+                        <p>Open the customer dashboard after login, or use admin dashboard from admin login.</p>
+                        <a class="btn" href="customer-dashboard.html">Open dashboard</a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <span>Offline-ready PWA (service worker enabled).</span>
+                    <span>Support: <a class="link" href="mailto:admin@cleaning.com">admin@cleaning.com</a></span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function() {});
+            });
+        }
+    </script>
+    <script>
+        // Check authentication on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const current = getCurrentUser();
+            if (!current) {
+                // If no authentication token, redirect to login
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+    <script src="auth.js" defer></script>
+</body>
+
+</html>

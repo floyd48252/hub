@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Customer dashboard — Industrial, Commercial & Domestic Cleaning Solutions">
+    <meta name="theme-color" content="#071021">
+    <link rel="manifest" href="manifest.json">
+    <title>Customer Dashboard — Cleaning Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="customer-dashboard">
+    <div class="page">
+        <!-- Header -->
+        <div class="dash-header">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <img src="logo.jpeg" alt="Logo" style="height: 50px; width: auto; border-radius: 8px;">
+                <div>
+                    <h1 class="dash-title">Customer Portal</h1>
+                    <p id="customer-welcome" class="dash-sub">Welcome back!</p>
+                </div>
+            </div>
+            <div class="dash-actions">
+                <a href="index.html" class="btn dark">Home</a>
+                <button id="logout-button" class="btn primary" type="button">Logout</button>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Invoices</div>
+                <div class="stat-value" id="invoice-count">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Pending Amount</div>
+                <div class="stat-value" id="pending-amount">$0.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Amount Paid</div>
+                <div class="stat-value" id="paid-amount">$0.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Active Requests</div>
+                <div class="stat-value" id="active-requests">0</div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid">
+            <!-- Profile Information -->
+            <div class="card block">
+                <h2>👤 Profile Information</h2>
+                <div class="profile-info">
+                    <div class="info-row">
+                        <span class="info-label">Name:</span>
+                        <span id="info-name" class="info-value">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Company:</span>
+                        <span id="info-company" class="info-value">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email:</span>
+                        <span id="info-email" class="info-value">--</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Phone:</span>
+                        <span id="info-phone" class="info-value">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Request Form -->
+            <div class="card block">
+                <h2>🛠️ Request Service</h2>
+                <form id="service-request-form" class="form">
+                    <div class="form-group">
+                        <label for="service_type">Service Type *</label>
+                        <select id="service_type" name="service_type" required>
+                            <option value="">Select service type...</option>
+                            <option value="residential_cleaning">Residential Cleaning</option>
+                            <option value="commercial_cleaning">Commercial Cleaning</option>
+                            <option value="industrial_cleaning">Industrial Cleaning</option>
+                            <option value="post_construction">Post-Construction Cleaning</option>
+                            <option value="deep_cleaning">Deep Cleaning</option>
+                            <option value="carpet_cleaning">Carpet Cleaning</option>
+                            <option value="window_cleaning">Window Cleaning</option>
+                            <option value="pressure_washing">Pressure Washing</option>
+                            <option value="disinfection">Disinfection Service</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="requested_date">Preferred Date</label>
+                        <input type="date" id="requested_date" name="requested_date" placeholder="Flexible">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Describe the service you need..." required></textarea>
+                    </div>
+                    <div id="service-request-notice" class="notice" style="display: none;"></div>
+                    <button type="submit" class="btn primary">Submit Request</button>
+                </form>
+            </div>
+
+            <!-- Recent Invoices -->
+            <div class="card block">
+                <h2>📋 Recent Invoices</h2>
+                <div class="table-actions" style="margin-bottom: 12px;">
+                    <button class="btn dark" onclick="refreshInvoices()">🔄 Refresh</button>
+                    <button class="btn" onclick="exportInvoices()">📥 Export</button>
+                </div>
+                <div class="table-wrap" role="region" aria-label="Invoices table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Invoice #</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invoice-table-body">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 40px;">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">📄</div>
+                                        <p>Loading invoices...</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Service Requests -->
+            <div class="card block">
+                <h2>📋 Service Requests</h2>
+                <div class="table-wrap" role="region" aria-label="Service requests table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Type</th>
+                                <th>Description</th>
+                                <th>Requested Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="request-table-body">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 40px;">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">🛠️</div>
+                                        <p>No service requests yet. Submit a request above to get started.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div class="card block" style="background: linear-gradient(135deg, rgba(124,58,237, 0.14) 0%, rgba(34,197,94, 0.10) 100%); border-color: rgba(255,255,255,.14);">
+            <h2>📞 Need Help?</h2>
+            <p>If you have any questions about our services or need assistance with your account, please contact our support team:</p>
+            <p style="margin: 12px 0; font-weight: 900;">📧 support@cleaning-solutions.com | ☎️ 1-800-CLEAN-01</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // Check authentication on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            // Wait a moment for auth.js to fully load
+            setTimeout(() => {
+                try {
+                    const current = getCurrentUser();
+                    if (!current || current.type !== 'customer') {
+                        // If no valid customer session, redirect to main page login
+                        console.log('No valid customer session, redirecting to login...');
+                        window.location.href = 'index.html';
+                    } else {
+                        // Initialize dashboard if authenticated
+                        console.log('Customer authenticated, loading dashboard...');
+                        renderCustomerDashboard(current);
+                        
+                        // Ensure dashboard is visible
+                        document.body.style.display = 'block';
+                        document.querySelector('.page').style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Authentication error:', error);
+                    window.location.href = 'index.html';
+                }
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

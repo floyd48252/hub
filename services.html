@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Industrial & Domestic Cleaning Solutions</title>
+    <meta name="description" content="Explore our services: residential and commercial cleaning, pest control, fumigation support, and allergen control. Call 224-440-0570.">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="robots" content="index,follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+    <style>
+         :root {
+            --primary: #0b1220;
+            --secondary: #059669;
+            --accent: #ffffff;
+            --bg: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 18px 45px rgba(2, 6, 23, .12);
+        }
+        
+        .ring-soft {
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, .12);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        
+        img {
+            transition: transform 0.25s ease-in-out;
+            display: inline-block;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-950 font-sans">
+    <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a class="flex items-center gap-3" href="./index.html" aria-label="Industrial & Domestic Cleaning Solutions Home">
+                    <img src="./logo.jpeg" alt="Industrial & Domestic Cleaning Solutions logo" class="w-11 h-11 rounded-xl object-cover ring-1 ring-gray-200 bg-white">
+                    <div class="leading-tight">
+                        <p class="text-[11px] tracking-wide uppercase text-slate-500">Industrial & Domestic</p>
+                        <p class="text-lg md:text-xl font-extrabold text-slate-950">Cleaning Solutions</p>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="./services.html" class="text-green-700 font-semibold">Services</a>
+                    <a href="./how-it-works.html" class="text-slate-700 hover:text-green-700 font-medium">How it works</a>
+                    <a href="./contact.html" class="text-slate-700 hover:text-green-700 font-medium">Free estimate</a>
+                    <a href="./faq.html" class="text-slate-700 hover:text-green-700 font-medium">FAQ</a>
+                    <a href="./contact.html" class="text-slate-700 hover:text-green-700 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a href="./contact.html" class="hidden sm:inline-flex bg-white border border-slate-200 hover:border-green-300 hover:text-green-700 px-4 py-2 rounded-lg font-semibold text-sm">
+                        Free estimate
+                    </a>
+                    <a href="tel:+12244400570" class="bg-blue-950 hover:bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                        <i class="fa-solid fa-phone mr-2"></i>224-440-0570
+                    </a>
+                    <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200" aria-label="Open menu" onclick="toggleMenu()">
+                        <i class="fa-solid fa-bars text-slate-900"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="grid gap-2 pt-2">
+                    <a href="./services.html" class="px-3 py-2 rounded-lg bg-white" onclick="toggleMenu(false)">Services</a>
+                    <a href="./how-it-works.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">How it works</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Free estimate</a>
+                    <a href="./faq.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">FAQ</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden text-white" style="background: radial-gradient(900px 520px at 15% 10%, rgba(5,150,105,.28), transparent 55%), linear-gradient(180deg, #059669, #0b1220);">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+            <div class="max-w-3xl">
+                <p class="text-white/70 text-sm">Services</p>
+                <h1 class="text-4xl md:text-5xl font-bold mt-2">Cleaning and facility services that fit your site</h1>
+                <p class="text-lg text-white/75 mt-4">Choose a service below, then contact us for a free estimate and scheduling.</p>
+                <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                    <a href="./contact.html" class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-bold text-center">Contact for free estimate</a>
+                    <a href="./contact.html" class="bg-white/10 hover:bg-white/15 border border-white/15 px-6 py-3 rounded-lg font-bold text-center">Request service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-200 hover:border-green-200 transition">
+                    <i class="fa-solid fa-broom text-4xl text-green-700 mb-4"></i>
+                    <h2 class="text-2xl font-bold mb-3">Cleaning</h2>
+                    <p class="text-slate-700 mb-4">Recurring maintenance, deep cleaning, move-in/out, post-construction, and facility-wide programs.</p>
+                    <ul class="text-sm text-slate-700 space-y-2">
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Checklist-based scope</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Quality spot checks</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Flexible schedules</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-200 hover:border-emerald-200 transition">
+                    <i class="fa-solid fa-smog text-4xl text-emerald-600 mb-4"></i>
+                    <h2 class="text-2xl font-bold mb-3">Fumigation support</h2>
+                    <p class="text-slate-700 mb-4">Inspection-first approach, treatment planning, and documentation support for regulated environments.</p>
+                    <ul class="text-sm text-slate-700 space-y-2">
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Walkthrough before pricing</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Clear prep instructions</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Post-service report</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-200 hover:border-rose-200 transition">
+                    <i class="fa-solid fa-bug text-4xl text-rose-600 mb-4"></i>
+                    <h2 class="text-2xl font-bold mb-3">Pest control</h2>
+                    <p class="text-slate-700 mb-4">Targeted treatments and prevention for common household and facility pests, using an IPM-style approach.</p>
+                    <ul class="text-sm text-slate-700 space-y-2">
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Identify entry points</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Action plan + follow-up</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Maintenance options</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-200 hover:border-purple-200 transition">
+                    <i class="fa-solid fa-lungs text-4xl text-purple-600 mb-4"></i>
+                    <h2 class="text-2xl font-bold mb-3">Allergen control</h2>
+                    <p class="text-slate-700 mb-4">Improve air quality and reduce irritants with specialized cleaning protocols for sensitive spaces.</p>
+                    <ul class="text-sm text-slate-700 space-y-2">
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>HEPA-focused cleaning*</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Dust & dander reduction</li>
+                        <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Optional deodorization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-soft border border-slate-200 hover:border-purple-200 transition">
+                <i class="fa-solid fa-shield-halved text-4xl text-purple-600 mb-4"></i>
+                <h2 class="text-2xl font-bold mb-3">Forensic crime scene cleaning</h2>
+                <p class="text-slate-700 mb-4">Professional biohazard remediation and decontamination services for trauma scenes, accidents, and crime locations. Our certified technicians handle sensitive situations with discretion, compassion, and strict adherence to OSHA and EPA regulations.</p>
+                <ul class="text-sm text-slate-700 space-y-2">
+                    <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Bloodborne pathogen cleanup & sanitization*</li>
+                    <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Odor removal & air purification</li>
+                    <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Legal compliance documentation</li>
+                    <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>Compassionate, discreet service</li>
+                    <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i>24/7 emergency response</li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-xs text-slate-500 mt-6">*Service options vary by site conditions and local availability.</p>
+        </div>
+    </main>
+
+    <footer class="bg-blue-950 text-slate-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 Industrial and Domestic Cleaning Solutions. All rights reserved.</p>
+            <p class="mt-2">Estimates are informational. Final pricing depends on scope, site conditions, and local requirements.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="./contact.html" class="hover:text-white">Request documentation</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(force) {
+            const el = document.getElementById('mobileMenu');
+            const shouldShow = typeof force === 'boolean' ? force : el.classList.contains('hidden');
+            if (shouldShow) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

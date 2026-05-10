@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Test</title>
+    <script src="auth.js"></script>
+</head>
+<body>
+    <h1>Authentication Test</h1>
+    <div id="test-results"></div>
+    
+    <script>
+        // Test authentication functions
+        window.addEventListener('DOMContentLoaded', () => {
+            const results = document.getElementById('test-results');
+            
+            // Test 1: Create a test user
+            const testUser = {
+                email: 'test@customer.com',
+                password: 'password123',
+                first_name: 'Test',
+                last_name: 'Customer',
+                company_name: 'Test Company',
+                phone: '123-456-7890',
+                invoices: [
+                    { number: 'INV-001', date: '2024-01-15', amount: '250.00', status: 'Paid', description: 'Office Cleaning' },
+                    { number: 'INV-002', date: '2024-02-01', amount: '180.00', status: 'Pending', description: 'Window Cleaning' }
+                ],
+                service_requests: [
+                    { id: 1, service_type: 'commercial_cleaning', description: 'Regular office cleaning', requested_date: '2024-02-15', status: 'Pending' }
+                ]
+            };
+            
+            // Add test user to localStorage
+            const users = getUsers();
+            users.push(testUser);
+            setUsers(users);
+            setCurrentUser({...testUser, type: 'customer'});
+            
+            results.innerHTML = `
+                <h2>Test Results:</h2>
+                <p>✅ Test user created successfully</p>
+                <p>✅ Authentication functions loaded</p>
+                <p>✅ Current user set: ${getCurrentUser().email}</p>
+                <p><a href="customer-dashboard.html">Test Customer Dashboard</a></p>
+                <p><a href="admin-dashboard.html">Test Admin Dashboard (will redirect)</a></p>
+                <p><a href="index.html">Back to Main Page</a></p>
+            `;
+        });
+    </script>
+</body>
+</html>

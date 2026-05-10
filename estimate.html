@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate | Industrial & Domestic Cleaning Solutions</title>
+    <meta name="description" content="Get a quick starting estimate for cleaning services. Pest control and fumigation typically require inspection. Call 224-440-0570.">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="robots" content="index,follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+         :root {
+            --primary: #0b1220;
+            --secondary: #059669;
+            --accent: #ffffff;
+            --bg: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 18px 45px rgba(2, 6, 23, .12);
+        }
+        
+        .ring-soft {
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, .12);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        
+        img {
+            transition: transform 0.25s ease-in-out;
+            display: inline-block;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-950 font-sans">
+    <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a class="flex items-center" href="./index.html">
+                    <i class="fa-solid fa-shield-heart text-3xl text-green-700"></i>
+                    <div class="ml-3 leading-tight">
+                        <p class="text-xs text-slate-500">Industrial & Domestic</p>
+                        <p class="text-xl md:text-2xl font-bold text-slate-950">Cleaning Solutions</p>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="./services.html" class="text-slate-700 hover:text-green-700 font-medium">Services</a>
+                    <a href="./how-it-works.html" class="text-slate-700 hover:text-green-700 font-medium">How it works</a>
+                    <a href="./estimate.html" class="text-green-700 font-semibold">Estimate</a>
+                    <a href="./faq.html" class="text-slate-700 hover:text-green-700 font-medium">FAQ</a>
+                    <a href="./contact.html" class="text-slate-700 hover:text-green-700 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a href="./contact.html" class="hidden sm:inline-flex bg-white border border-slate-200 hover:border-green-300 hover:text-green-700 px-4 py-2 rounded-lg font-semibold text-sm">
+                        Request service
+                    </a>
+                    <a href="tel:+12244400570" class="bg-blue-950 hover:bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                        <i class="fa-solid fa-phone mr-2"></i>224-440-0570
+                    </a>
+                    <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200" aria-label="Open menu" onclick="toggleMenu()">
+                        <i class="fa-solid fa-bars text-slate-900"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="grid gap-2 pt-2">
+                    <a href="./services.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Services</a>
+                    <a href="./how-it-works.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">How it works</a>
+                    <a href="./estimate.html" class="px-3 py-2 rounded-lg bg-white" onclick="toggleMenu(false)">Estimate</a>
+                    <a href="./faq.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">FAQ</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden text-white" style="background: radial-gradient(900px 520px at 15% 10%, rgba(16,185,129,.28), transparent 55%), linear-gradient(180deg, #071827, #0c3f5b);">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+            <div class="max-w-3xl">
+                <p class="text-white/70 text-sm">Estimate</p>
+                <h1 class="text-4xl md:text-5xl font-bold mt-2">Get a quick starting estimate</h1>
+                <p class="text-lg text-white/75 mt-4">For some services (like fumigation), we’ll confirm scope and provide final pricing after a walkthrough.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-soft border border-slate-200 p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center mb-2">Instant service estimate</h2>
+                <p class="text-center text-slate-700 mb-8">Starting estimates only. Final pricing depends on scope and site conditions.</p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Service Needed</label>
+                        <select id="service" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" onchange="calcTotal()">
+                            <option value="sqft:0.12">Commercial cleaning (per sq ft)</option>
+                            <option value="sqft:0.25">Industrial cleaning (per sq ft)</option>
+                            <option value="flat:150">Residential cleaning (starting)</option>
+                            <option value="flat:99">General pest control (starting)</option>
+                            <option value="inspect:0">Fumigation (inspection required)</option>
+                            <option value="flat:250">Allergen control (starting)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Square Footage (if applicable)</label>
+                        <input type="number" id="sqft" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="5000" value="5000" min="0" oninput="calcTotal()">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-2">Property Type</label>
+                    <select id="type" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                        <option>Residential</option>
+                        <option>Commercial Office</option>
+                        <option>Warehouse/Industrial</option>
+                        <option>Restaurant/Food Facility</option>
+                        <option>Medical/Healthcare</option>
+                    </select>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg mb-6">
+                    <div class="flex justify-between text-xl">
+                        <span class="font-semibold">Estimated Starting Price:</span>
+                        <span class="font-bold text-green-700" id="total">$600.00</span>
+                    </div>
+                    <p id="quote-note" class="text-sm text-slate-700 mt-2">We’ll confirm the scope and finalize pricing after details are reviewed.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="./contact.html" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-6 rounded-lg text-lg text-center">
+                        Request service
+                    </a>
+                    <a href="tel:+12244400570" class="w-full bg-white border border-slate-200 hover:border-green-200 font-bold py-4 px-6 rounded-lg text-lg text-center">
+                        Call 224-440-0570
+                    </a>
+                </div>
+                <p class="text-xs text-slate-500 mt-4 text-center">No obligation. Commercial billing options available upon approval.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-950 text-gray-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 Industrial and Domestic Cleaning Solutions. All rights reserved.</p>
+            <p class="mt-2">Estimates are informational. Final pricing depends on scope, site conditions, and local requirements.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="./contact.html" class="hover:text-white">Request documentation</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(force) {
+            const el = document.getElementById('mobileMenu');
+            const shouldShow = typeof force === 'boolean' ? force : el.classList.contains('hidden');
+            if (shouldShow) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+
+        function calcTotal() {
+            const raw = (document.getElementById('service').value || '').toString();
+            const sqft = parseFloat(document.getElementById('sqft').value) || 0;
+            const [mode, value] = raw.split(':');
+            const rate = parseFloat(value || '0');
+
+            let totalText = '';
+            let note = 'We’ll confirm the scope and finalize pricing after details are reviewed.';
+
+            if (mode === 'inspect') {
+                totalText = 'Inspection required';
+                note = 'Call for scheduling. Final pricing is provided after an on-site walkthrough.';
+            } else if (mode === 'sqft') {
+                const computed = Math.max(0, rate) * Math.max(0, sqft);
+                totalText = `$${computed.toFixed(2)}`;
+                note = 'Per-square-foot estimate. Minimums may apply depending on location and scope.';
+            } else {
+                const computed = Math.max(0, rate);
+                totalText = `$${computed.toFixed(2)}`;
+                note = 'Starting estimate. We’ll confirm details and provide the final quote before service.';
+            }
+
+            document.getElementById('total').textContent = totalText;
+            document.getElementById('quote-note').textContent = note;
+        }
+
+        calcTotal();
+    </script>
+</body>
+
+</html>

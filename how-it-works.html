@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | Industrial & Domestic Cleaning Solutions</title>
+    <meta name="description" content="Our simple process: request service, confirm scope and schedule, then complete service with a final walkthrough. Call 224-440-0570.">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="robots" content="index,follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+         :root {
+            --primary: #0b1220;
+            --secondary: #059669;
+            --accent: #ffffff;
+            --bg: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 18px 45px rgba(2, 6, 23, .12);
+        }
+        
+        .ring-soft {
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, .12);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        
+        img {
+            transition: transform 0.25s ease-in-out;
+            display: inline-block;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-950 font-sans">
+    <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a class="flex items-center gap-3" href="./index.html" aria-label="Industrial & Domestic Cleaning Solutions Home">
+                    <img src="./logo.jpeg" alt="Industrial & Domestic Cleaning Solutions logo" class="w-11 h-11 rounded-xl object-cover ring-1 ring-gray-200 bg-white">
+                    <div class="leading-tight">
+                        <p class="text-[11px] tracking-wide uppercase text-slate-500">Industrial & Domestic</p>
+                        <p class="text-lg md:text-xl font-extrabold text-slate-950">Cleaning Solutions</p>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="./services.html" class="text-slate-700 hover:text-green-700 font-medium">Services</a>
+                    <a href="./how-it-works.html" class="text-green-700 font-semibold">How it works</a>
+                    <a href="./contact.html" class="text-slate-700 hover:text-green-700 font-medium">Free estimate</a>
+                    <a href="./faq.html" class="text-slate-700 hover:text-green-700 font-medium">FAQ</a>
+                    <a href="./contact.html" class="text-slate-700 hover:text-green-700 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a href="./contact.html" class="hidden sm:inline-flex bg-white border border-slate-200 hover:border-green-300 hover:text-green-700 px-4 py-2 rounded-lg font-semibold text-sm">
+                        Free estimate
+                    </a>
+                    <a href="tel:+12244400570" class="bg-blue-950 hover:bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                        <i class="fa-solid fa-phone mr-2"></i>224-440-0570
+                    </a>
+                    <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200" aria-label="Open menu" onclick="toggleMenu()">
+                        <i class="fa-solid fa-bars text-slate-900"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="grid gap-2 pt-2">
+                    <a href="./services.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Services</a>
+                    <a href="./how-it-works.html" class="px-3 py-2 rounded-lg bg-white" onclick="toggleMenu(false)">How it works</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Free estimate</a>
+                    <a href="./faq.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">FAQ</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden text-white" style="background: radial-gradient(900px 520px at 15% 10%, rgba(5,150,105,.28), transparent 55%), linear-gradient(180deg, #059669, #0b1220);">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+            <div class="max-w-3xl">
+                <p class="text-white/70 text-sm">How it works</p>
+                <h1 class="text-4xl md:text-5xl font-bold mt-2">A simple process designed for speed and clarity</h1>
+                <p class="text-lg text-white/75 mt-4">We keep things straightforward: request service, confirm scope, then complete the work with a final walkthrough.</p>
+                <div class="flex flex-col sm:flex-row gap-3 mt-8">
+                    <a href="./contact.html" class="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-bold text-center">Request service</a>
+                    <a href="./contact.html" class="bg-white/10 hover:bg-white/15 border border-white/15 px-6 py-3 rounded-lg font-bold text-center">Free estimate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-20 bg-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-soft">
+                    <div class="w-12 h-12 rounded-xl bg-green-50 text-green-700 grid place-items-center mb-4 ring-soft">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">1) Tell us what you need</h2>
+                    <p class="text-slate-700">Call or submit the form with your service type, location, and urgency.</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-soft">
+                    <div class="w-12 h-12 rounded-xl bg-green-50 text-green-700 grid place-items-center mb-4 ring-soft">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">2) We confirm scope & schedule</h2>
+                    <p class="text-slate-700">You’ll get a clear checklist and an arrival window—no surprises.</p>
+                </div>
+                <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-soft">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 grid place-items-center mb-4 ring-soft">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">3) Service + final walkthrough</h2>
+                    <p class="text-slate-700">We clean/treat, document, and confirm results before we close out.</p>
+                </div>
+            </div>
+
+            <div class="mt-10 bg-white rounded-2xl border border-slate-200 shadow-soft p-7">
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-shield text-green-700 mt-1"></i>
+                        <div>
+                            <p class="font-semibold">Trusted & insured</p>
+                            <p class="text-slate-700">COI available for property managers and commercial sites.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-file-circle-check text-green-700 mt-1"></i>
+                        <div>
+                            <p class="font-semibold">Documentation ready</p>
+                            <p class="text-slate-700">Checklists and service notes for compliance workflows.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-headset text-green-700 mt-1"></i>
+                        <div>
+                            <p class="font-semibold">Easy support</p>
+                            <p class="text-slate-700">We answer calls and follow up by email when requested.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-950 text-slate-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 Industrial and Domestic Cleaning Solutions. All rights reserved.</p>
+            <p class="mt-2">Estimates are informational. Final pricing depends on scope, site conditions, and local requirements.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="./contact.html" class="hover:text-white">Request documentation</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(force) {
+            const el = document.getElementById('mobileMenu');
+            const shouldShow = typeof force === 'boolean' ? force : el.classList.contains('hidden');
+            if (shouldShow) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>

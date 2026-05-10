@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Industrial & Domestic Cleaning Solutions</title>
+    <meta name="description" content="Request an estimate or schedule service. Call 224-440-0570 or send a message. Serving all 50 states.">
+    <meta name="theme-color" content="#0b1220">
+    <meta name="robots" content="index,follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+         :root {
+            --primary: #0b1220;
+            --secondary: #059669;
+            --accent: #ffffff;
+            --bg: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 18px 45px rgba(2, 6, 23, .12);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        
+        img {
+            transition: transform 0.25s ease-in-out;
+            display: inline-block;
+        }
+        
+        img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-950 font-sans">
+    <header class="bg-white/90 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a class="flex items-center gap-3" href="./index.html" aria-label="Industrial & Domestic Cleaning Solutions Home">
+                    <img src="./logo.jpeg" alt="Industrial & Domestic Cleaning Solutions logo" class="w-11 h-11 rounded-xl object-cover ring-1 ring-gray-200 bg-white">
+                    <div class="leading-tight">
+                        <p class="text-[11px] tracking-wide uppercase text-slate-500">Industrial & Domestic</p>
+                        <p class="text-lg md:text-xl font-extrabold text-slate-950">Cleaning Solutions</p>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="./services.html" class="text-slate-700 hover:text-green-700 font-medium">Services</a>
+                    <a href="./how-it-works.html" class="text-slate-700 hover:text-green-700 font-medium">How it works</a>
+                    <a href="./contact.html" class="text-green-700 font-semibold">Contact</a>
+                    <a href="./faq.html" class="text-slate-700 hover:text-green-700 font-medium">FAQ</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a href="tel:+12244400570" class="bg-blue-950 hover:bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold text-sm">
+                        <i class="fa-solid fa-phone mr-2"></i>224-440-0570
+                    </a>
+                    <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200" aria-label="Open menu" onclick="toggleMenu()">
+                        <i class="fa-solid fa-bars text-slate-900"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="grid gap-2 pt-2">
+                    <a href="./services.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">Services</a>
+                    <a href="./how-it-works.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">How it works</a>
+                    <a href="./contact.html" class="px-3 py-2 rounded-lg bg-white" onclick="toggleMenu(false)">Contact</a>
+                    <a href="./faq.html" class="px-3 py-2 rounded-lg hover:bg-white" onclick="toggleMenu(false)">FAQ</a>
+                    <!-- Contact already selected -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative overflow-hidden text-white" style="background: radial-gradient(900px 520px at 15% 10%, rgba(5,150,105,.28), transparent 55%), linear-gradient(180deg, #059669, #0b1220);">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+            <div class="max-w-3xl">
+                <p class="text-white/70 text-sm">Contact</p>
+                <h1 class="text-4xl md:text-5xl font-bold mt-2">Request an estimate or schedule service</h1>
+                <p class="text-lg text-white/75 mt-4">Call us anytime or send a message. For larger sites and certain services, we start with a walkthrough.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Get in touch</h2>
+                    <p class="text-gray-300 mb-8">We’ll confirm scope, scheduling, and any walkthrough requirements before service.</p>
+                    <div class="space-y-4 text-lg">
+                        <p><i class="fa-solid fa-phone mr-3 text-green-400"></i> <a href="tel:+12244400570" class="hover:underline">224-440-0570</a></p>
+                        <p><i class="fa-solid fa-location-dot mr-3 text-green-400"></i> Based in Virginia, USA</p>
+                        <p class="text-sm text-slate-300 mt-6">Licensing and documentation available upon request (varies by state/service).</p>
+                    </div>
+                </div>
+
+                <form class="space-y-4 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <input type="text" name="name" placeholder="Full Name" class="w-full p-3 rounded-lg text-slate-950" required>
+                        <input type="tel" name="phone" placeholder="Phone" class="w-full p-3 rounded-lg text-slate-950" required>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <select name="service" class="w-full p-3 rounded-lg text-slate-950" required>
+                            <option value="">Select Service Needed</option>
+                            <option>Cleaning - Residential</option>
+                            <option>Cleaning - Commercial/Industrial</option>
+                            <option>Fumigation</option>
+                            <option>Pest Control</option>
+                            <option>Allergen Control</option>
+                            <option>Emergency Service</option>
+                            <option>forensic crime scene cleaning</option>
+                        </select>
+                        <input type="text" name="location" placeholder="City, State" class="w-full p-3 rounded-lg text-slate-950">
+                    </div>
+                    <textarea name="message" placeholder="Tell us about the site (sq ft, frequency, issues, urgency)..." rows="5" class="w-full p-3 rounded-lg text-slate-950" required></textarea>
+                    <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-lg">
+                        Send message
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-950 text-slate-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 Industrial and Domestic Cleaning Solutions. All rights reserved.</p>
+            <p class="mt-2">Estimates are informational. Final pricing depends on scope, site conditions, and local requirements.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="./contact.html" class="hover:text-white">Request documentation</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(force) {
+            const el = document.getElementById('mobileMenu');
+            const shouldShow = typeof force === 'boolean' ? force : el.classList.contains('hidden');
+            if (shouldShow) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
